@@ -7,7 +7,6 @@ import shap
 import joblib
 import os
 import logging
-import base64
 from typing import Tuple, Optional
 
 # Set up logging
