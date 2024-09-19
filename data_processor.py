@@ -35,8 +35,7 @@ def load_and_process_data():
     logging.info(f"Games columns: {games.columns.tolist()}")
     logging.info(f"Players columns: {players.columns.tolist()}")
     
-    # We can't merge these dataframes directly as there's no common player identifier
-    # Instead, let's create a dataset with unique players and their most recent game stats
+    # Create a dataset with unique teams and their most recent game stats
     df = games.sort_values('GAME_DATE').groupby('TEAM_ID').last().reset_index()
     
     # Now merge this with the players dataframe
